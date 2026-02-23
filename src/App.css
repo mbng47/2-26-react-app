@@ -15,7 +15,12 @@
 
 .App-title {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0 0 1rem; /* 1rem above the panel */
+  text-align: center;
+  white-space: nowrap; /* keep the title on a single line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
 }
 
 .App-subtitle {
@@ -27,10 +32,17 @@
 .App-header-top {
   width: 100%;
   max-width: 900px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
+  display: block;
+  margin-bottom: 0; /* spacing handled by the title's margin */
+  position: relative; /* container for the absolutely positioned button */
+}
+
+/* Pin the (optional) disconnect button to the right of the header area */
+.App-header-top .App-button-secondary {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .App-panel {
