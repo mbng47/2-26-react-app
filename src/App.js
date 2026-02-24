@@ -4,9 +4,9 @@ import './App.css';
 // TODO: Replace this with your own Spotify app client ID
 // Create an app at https://developer.spotify.com/dashboard
 // and set the Redirect URI to http://localhost:3000
-const SPOTIFY_CLIENT_ID = 'YOUR_SPOTIFY_CLIENT_ID_HERE';
+const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const SPOTIFY_AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
-const SPOTIFY_REDIRECT_URI = window.location.origin;
+const SPOTIFY_REDIRECT_URI = `${window.location.origin}/callback`;
 const SPOTIFY_SCOPES = ['user-top-read'];
 
 function buildAuthUrl() {
